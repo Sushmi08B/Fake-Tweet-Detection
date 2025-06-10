@@ -1,0 +1,1 @@
+https://github.com/tizfa/tweepfake_deepfake_text_detection/blob/master/data/splits/train.csv

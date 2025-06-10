@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="description" content="Deepfake Detection using Deep Learning and FastText Embeddings" />
+	<meta name="keywords" content="Deepfake, Detection, Machine Learning, FastText, Social Media" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Deep Fake Detection</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        #header {
+            text-align: center;
+            padding: 10px;
+        }
+        #header font {
+            font-size: 18px;
+            color: #FFD700; /* Yellow color */
+        }
+        #menu ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: #333;
+            border-radius: 8px;
+        }
+        #menu ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        #menu ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: yellow;
+            padding: 10px;
+        }
+        #menu ul li a:hover {
+            color: #FFA500; /* Orange color on hover */
+        }
+        #splash {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #splash img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        p {
+            font-size: 16px;
+            color: black;
+            padding: 20px;
+            text-align: justify;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<font>Deepfake Detection on Social Media: Leveraging Deep Learning and FastText Embeddings for Identifying Machine-Generated Tweets</font>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="first current_page_item"><a href="{% url 'index' %}">Home</a></li>
+			<li class="first current_page_item"><a href="{% url 'UserLogin' %}">User Login Here</a></li>
+		</ul>
+	</div>
+	<div id="splash">
+		<img src="{% static 'images/investor2.jpg' %}" alt="Deepfake Detection">
+	</div>
+	<p>
+		Deepfake Detection on Social Media: Leveraging Deep Learning and FastText Embeddings for Identifying Machine-Generated Tweets. This project aims to develop effective techniques using deep learning methods combined with FastText embeddings to detect machine-generated content in social media platforms, addressing the challenges posed by misinformation and deepfakes in digital communications.
+	</p>
+</div>
+</body>
+</html>

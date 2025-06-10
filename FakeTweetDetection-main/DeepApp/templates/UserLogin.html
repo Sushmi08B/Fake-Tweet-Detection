@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Deepfake Detection using Deep Learning and FastText Embeddings" />
+	<meta name="keywords" content="Deepfake, Detection, Machine Learning, FastText, Social Media" />
+	<title>Deep Fake Detection</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        #header {
+            text-align: center;
+            padding: 10px;
+        }
+        #header h2 {
+            color: #FFD700; /* Yellow color */
+            font-size: 17px;
+        }
+        #menu ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: #333;
+            border-radius: 8px;
+        }
+        #menu ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        #menu ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: yellow;
+            padding: 10px;
+        }
+        #menu ul li a:hover {
+            color: #FFA500; /* Orange color on hover */
+        }
+        #splash {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #splash img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+	</style>
+	<script>
+		function validate(formObj) {
+            if (formObj.t1.value.length === 0) {
+                alert("Please Enter User Name");
+                formObj.t1.focus();
+                return false;
+            }
+            if (formObj.t2.value.length === 0) {
+                alert("Please Enter Password");
+                formObj.t2.focus();
+                return false;
+            }
+            return true;
+        }
+
+        // Modal functionality
+        function openModal() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<header id="header">
+		<h2>Deepfake Detection on Social Media: Leveraging Deep Learning and FastText Embeddings for Identifying Machine-Generated Tweets</h2>
+	</header>
+
+	<nav id="menu">
+		<ul>
+			<li class="first current_page_item"><a href="{% url 'index' %}">Home</a></li>
+			<li class="first current_page_item"><a href="#" onclick="openModal();">User Login Here</a></li>
+		</ul>
+	</nav>
+
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor2.jpg' %}" alt="Deepfake Detection">
+	</div>
+
+	<div id="loginModal" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="closeModal();">&times;</span>
+			<form name="f1" method="post" action="{% url 'UserLoginAction' %}" onsubmit="return validate(this);">
+				<br/>{% csrf_token %}<br/>
+				<h5><b>User Login Screen</b></h5>
+				<div style="color: red; text-align: center;">{{ data|safe }}</div>
+
+				<table align="center">
+					<tr>
+						<td><label for="username">Username</label></td>
+						<td><input type="text" id="username" name="t1" style="font-family: Comic Sans MS" size="30" /></td>
+					</tr>
+					<tr>
+						<td><label for="password">Password</label></td>
+						<td><input type="password" id="password" name="t2" style="font-family: Comic Sans MS" size="30" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Login"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
