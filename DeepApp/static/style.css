@@ -1,0 +1,154 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    color: #5C5B5B;
+    line-height: 1.75em;
+    background: #F7F7F7; /* Subtle background */
+    font-family: Georgia, serif;
+}
+
+a {
+    text-decoration: none;
+    color: #0F8C8C;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #007D7D; /* Darker teal on hover */
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+ul {
+    margin-bottom: 1.5em;
+    list-style-type: none;
+}
+
+/* Wrapper */
+#wrapper {
+    width: 980px;
+    margin: 50px auto 0 auto;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+
+/* Header */
+#header {
+    padding: 20px;
+    background-color: #6E6E6E;
+    color: #FFFFFF;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#logo {
+    font-size: 1.5em;
+    color: #FFD700;
+    text-shadow: 0 1px 1px #3E3E3E;
+}
+
+#slogan {
+    font-size: 1em;
+    color: #BEBEBE;
+}
+
+/* Menu */
+#menu {
+    background-color: #333;
+    text-align: center;
+    padding: 15px 0;
+}
+
+#menu ul {
+    display: inline-block;
+}
+
+#menu ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#menu a {
+    color: #FFFFFF;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+#menu a:hover {
+    color: #FFA500; /* Orange highlight */
+}
+
+/* Splash Image */
+#splash {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#splash .pic {
+    width: 100%;
+    max-width: 870px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #D4D4D4;
+}
+
+/* Page Content */
+p {
+    color: #333;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1em;
+    padding: 0 45px;
+    text-align: justify;
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+    color: #8C8B8B;
+    padding: 20px 0;
+    background-color: #6E6E6E;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#footer a {
+    color: #8C8B8B;
+    transition: color 0.3s ease;
+}
+
+#footer a:hover {
+    color: #5C5B5B;
+}
+
+/* Custom Button Style */
+button, .form-submit {
+    background-color: #0F8C8C;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .form-submit:hover {
+    background-color: #007D7D;
+}

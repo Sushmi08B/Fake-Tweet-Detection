@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .feedback-form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 600px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+        width: 96%;
+        padding: 8px;
+        border: 2px solid #ccc;
+        border-radius: 2px;
+        font-size: 14px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .source-field {
+        display: none;
+    }
+  </style>
+  <script>
+    function toggleSourceField() {
+        const category = document.getElementById("category").value;
+        const sourceField = document.querySelector(".source-field");
+        sourceField.style.display = category === "bot" ? "block" : "none";
+    }
+  </script>
+</head>
+<body>
+<div class="feedback-form-container">
+  <h2>Feedback Form</h2>
+  <form method="post" action="/SubmitFeedback/">
+    {% csrf_token %}
+    <div class="form-row">
+      <label for="screenName">Username:</label>
+      <input type="text" id="screenName" name="screen_name" required>
+    </div>
+    <div class="form-row">
+      <label for="feedbackTweet">Tweet:</label>
+      <textarea id="feedbackTweet" name="tweet" rows="4" required></textarea>
+    </div>
+    <div class="form-row">
+      <label for="category">Category:</label>
+      <select id="category" name="category" onchange="toggleSourceField()" required>
+        <option value="human">Human</option>
+        <option value="bot">Bot</option>
+      </select>
+    </div>
+    <div class="form-row source-field">
+      <label for="source">Source (if Bot):</label>
+      <input type="text" id="source" name="source">
+    </div>
+    <div class="form-actions">
+      <button type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
